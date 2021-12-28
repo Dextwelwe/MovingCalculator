@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Calculator</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="jquery.timepicker.css">
+    <script src="bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.timepicker.js"></script>
+    <script src="script.js"></script>
+    
+</head>
+<body  onload="dates()">
+  
+
+   <div class="container-fluid">
+        <div class="row bg-light">
+            <div class="col-sm-1 col-md-3 bg-dark"> </div>
+            <div id="form_rm" class="form-group col"> 
+        <form id="form">
+            <label for="time_start" class="fs-5"  >STARTING TIME</label><br>
+            <input type="text" id="time_start" name="time_start" class="w-100 rounded border-1" ><br>
+            <label for="time_current" class="fs-5">CURRENT TIME</label><br>
+            <input type="text" id="time_current" name="time_current" class="w-100 rounded border-1"><br>
+            <label for="rate" class="fs-5 w-100">RATE</label><br>
+            <input type="text" id="rate" name="rate" class="w-100 rounded border-1" value=""><br><br>
+            <div class="row">
+                <div class="col">
+                <label for="transport_fee" class="fs-5  w-100" >TRANSPORT HOURS</label><br>
+                <input type="text" id="transport_fee" name="transport_fee" class="  w-100 rounded border-1" value=""><br><br>
+            </div>
+            <div class="col"> 
+                <label for="tax" class="fs-5 w-100">INCLUDE TAXES</label><br>
+                <div class="row">
+                    <div class="col">
+                <input type="radio" id="taxYES" name="tax" class=" form-check-input " value=""> 
+                <span class="ps-1"> YES</span>  
+                <br><br>
+            </div>
+                <div class="col">
+                <input type="radio" id="taxNO" name="tax" class=" form-check-input " value=""><span class="ps-1"> NO</span>
+                <br><br>
+            </div>
+            </div>
+            </div>
+        </div>
+            <button id="buttonCalc" type="button" class="btn btn-outline-light text-dark  fs-4 border-dark w-100" data-bs-toggle="modal" data-bs-target="#modal" onclick="calculate();" > CALCULATE</button>  
+            
+          </form>
+        </div>
+        <div class="col-sm-1 col-md-3 bg-dark "></div>
+        </div>  
+</div>
+
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+                <div class="modal-dialog ">
+                  <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                      <h5 class="modal-title fs-5 text-light" id="exampleModalLabel">PRICE</h5>
+                      <button type="button" class="btn-close btn-danger bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="modal_text" class="modal-body ">
+                       <p id="modal_txt" class="d-none">  </p>
+                       <p id="modal_txt1" class="d-none"> </p>
+                       <p id="modal_txt2" class="d-none"> </p>
+                       <p id="modal_txt3" class="d-none"> </p>
+                       <p id="modal_txt4" class="d-none"> </p>
+                       <p id="modal_txt5" class="d-none"> </p>
+                       <p id="modal_txt6" class="d-none"> </p>
+                    </div>
+                  </div>
+                </div>
+              </div>         
+              
+
+
+
+</body>
+</html>
